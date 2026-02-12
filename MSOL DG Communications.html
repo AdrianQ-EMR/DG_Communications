@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSOL Data Governance Communication Plan</title>
+  <style>
+    :root {
+      /* Light Mode Colors */
+      --header-bg: linear-gradient(135deg, #004b8d 0%, #004b8d 100%);
+      --header-text: #ffffff;
+      --header-text-secondary: #e6f0f5;
+      --page-bg: #f5f9fc;
+      --page-bg-alt: #ffffff;
+      --text-primary: #004b8d;
+      --text-secondary: #004b8d;
+      --text-muted: #004b8d;
+      --brand: #004b8d;
+      --brand-hover: #2b7696;
+      --accent-bg: #dceef8;
+      --accent: #2c78a0;
+      --border: #d0dbe5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --header-bg: linear-gradient(135deg, #2b5396 0%, #2b7696d1 100%);
+        --header-text: #ffffff;
+        --header-text-secondary: #cfdbe4;
+        --page-bg: #121a23;
+        --page-bg-alt: #18242f;
+        --text-primary: #e8f0f7;
+        --text-secondary: #b8c7d6;
+        --text-muted: #7f93a5;
+        --brand: #5bb8e6;
+        --brand-hover: #4aa1c7;
+        --accent-bg: #1f2e3a;
+        --accent: #5bb8e6;
+        --border: #2f4354;
+      }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'SF Pro Display', 'SF Pro', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+    .poster-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--page-bg-alt);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(58,143,183,0.12);
+      padding: 0;
+      overflow: hidden;
+    }
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      text-align: center;
+      padding: 56px 32px 40px 32px;
+      position: relative;
+    }
+    .header-title {
+      font-size: clamp(40px, 6vw, 60px);
+      font-weight: 900;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+    }
+    .header-subtitle {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--header-text-secondary);
+    }
+    .header-description {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--header-text-secondary);
+    }
+    .content {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      padding: 40px 32px;
+      flex-wrap: wrap;
+    }
+    .content1 {
+      display: flex;
+      justify-content: center;
+      padding: 40px 32px;
+    }
+    .img1{
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-width: 300px;
+    }
+    .card {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .card1 {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: var(--brand);
+    }
+    .card ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .card ul li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .stat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .stat-card {
+      flex: 1 1 45%;
+      background: var(--page-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .stat-card h4 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--text-secondary);
+    }
+    .stat-card p {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--brand);
+      margin: 8px 0 0 0;
+    }
+    .flowchart {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .flow-step {
+      background: var(--page-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      position: relative;
+    }
+    .flow-step::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      width: 2px;
+      height: 12px;
+      background: var(--brand);
+    }
+    .flow-step:first-child::before {
+      display: none;
+    }
+    .flow-step h4 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: var(--brand);
+    }
+    .flow-step p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-container">
+    <header>
+      <div class="header-title">MSOL Data Governance Communication</div>
+      <div class="header-subtitle">Driving Adoption Through Structured Engagement</div>
+      <div class="header-description">A strategic communication framework to align roles, responsibilities, and escalation paths for effective data governance at MSOL.</div>
+    </header>
+    <div class="content">
+        
+      <div class="column">
+        <div class="card">
+          <h3>Key Takeaways</h3>
+          <ul>
+            <li><strong>Structured Cadence:</strong> Regular meetings ensure alignment and timely escalation.</li>
+            <li><strong>Defined Escalation Path:</strong> Clear hierarchy from Data Admins to Executive Sponsors.</li>
+            <li><strong>Role Clarity:</strong> Each role has defined communication responsibilities and channels.</li>
+            <li><strong>Change Champions:</strong> All roles promote data governance within their domains.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Communication Flow</h3>
+          <div class="flowchart">
+            <div class="flow-step">
+              <h4>Executive Sponsors</h4>
+              <p>Set vision, communicate strategy, receive escalations from Council.</p>
+            </div>
+            <div class="flow-step">
+              <h4>Data Governance Council</h4>
+              <p>Translate strategy into policy, communicate with Domain Execs.</p>
+            </div>
+            <div class="flow-step">
+              <h4>Data Domain Executives</h4>
+              <p>Bridge Council and operational levels, guide Data Owners.</p>
+            </div>
+            <div class="flow-step">
+              <h4>Data Owners</h4>
+              <p>Communicate policies, guide Stewards, report data quality.</p>
+            </div>
+            <div class="flow-step">
+              <h4>Data Stewards</h4>
+              <p>Coordinate daily data management, escalate persistent issues.</p>
+            </div>
+            <div class="flow-step">
+              <h4>Data Administrators</h4>
+              <p>Provide operational updates, alert Stewards of issues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h3>Meeting Cadences</h3>
+          <ul>
+            <li><strong>Executive Sponsors ↔ Council:</strong> Semi-annual reviews</li>
+            <li><strong>Council ↔ Domain Execs:</strong> Quarterly strategy sessions</li>
+            <li><strong>Domain Execs ↔ Owners:</strong> Monthly/Bi-monthly meetings</li>
+            <li><strong>Owners ↔ Stewards:</strong> Monthly data quality reviews</li>
+            <li><strong>Stewards ↔ Admins:</strong> Ongoing collaboration</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Role Metrics</h3>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <h4>Executive Reviews</h4>
+              <p>2x / year</p>
+            </div>
+            <div class="stat-card">
+              <h4>Council Meetings</h4>
+              <p>Quarterly</p>
+            </div>
+            <div class="stat-card">
+              <h4>Owner-Steward Sync</h4>
+              <p>Monthly</p>
+            </div>
+            <div class="stat-card">
+              <h4>Admin Touchpoints</h4>
+              <p>Ad hoc / Weekly</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Next Steps</h3>
+          <ul>
+            <li>Conduct onboarding sessions for all roles</li>
+            <li>Schedule key meetings and forums</li>
+            <li>Distribute reporting templates</li>
+            <li>Publish contact directory for all roles</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="content1">
+    <div class="card1">
+        <h3 align="center">Data Governance Members</h3>
+        <img class="img1" src="roles.png" alt="Data Governance Members">
+    </div>
+  </div>
+  </div>
+</body>
+</html>
